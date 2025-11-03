@@ -113,28 +113,7 @@ function mostrarPokemon(data) {
 
   // Color dinámico según tipo principal 
   const tipoPrincipal = data.types[0].type.name;
-  const coloresTipo = {
-    normal: "#A8A77A", 
-    fire: "#EE8130", 
-    water: "#6390F0", 
-    electric: "#F7D02C",
-    grass: "#7AC74C", 
-    ice: "#96D9D6", 
-    fighting: "#C22E28", 
-    poison: "#A33EA1",
-    ground: "#E2BF65", 
-    flying: "#A98FF3", 
-    psychic: "#F95587", 
-    bug: "#A6B91A",
-    rock: "#B6A136", 
-    ghost: "#735797", 
-    dragon: "#6F35FC", 
-    dark: "#705746",
-    steel: "#B7B7CE", 
-    fairy: "#D685AD"
-  };
-
-  const colorTipo = coloresTipo[tipoPrincipal] || "#ffcb05";
+  const colorTipo = TYPE_COLORS[tipoPrincipal] || "#ffcb05";
 
   // Nombre del color del tipo
   nombre.style.color = colorTipo;
@@ -261,3 +240,8 @@ function limpiar() {
   if (mensajeInicial) mensajeInicial.style.display = "block";
   if (ejemplos) ejemplos.style.display = "block";
 }
+
+// Auto-focus en el input al cargar la página
+window.addEventListener('load', () => {
+  entrada.focus();
+});

@@ -51,6 +51,8 @@ input:focus {
   outline: none;
   border-color: #ff0505;
   box-shadow: 0 0 6px #ff0505;
+  box-shadow: 0 0 12px rgba(227,53,13,0.5); 
+  transform: scale(1.02); 
 }
 
 button {
@@ -62,18 +64,23 @@ button {
   cursor: url('https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png'), pointer;
   color: #fff;
   transition: 0.2s;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 #buscar { 
   background-color: #e3350d; 
 }
 #buscar:hover { 
   background-color: #c62f0c; 
+  transform: translateY(-2px); 
+  box-shadow: 0 4px 8px rgba(227,53,13,0.4);
 }
 #limpiar { 
   background-color: #555;
  }
 #limpiar:hover { 
   background-color: #333;
+  transform: translateY(-2px); 
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3); 
  }
 
 .resultado {
@@ -115,7 +122,7 @@ button {
 }
 
 footer {
-  background-color: #222;
+  background: linear-gradient(180deg, #1a1a1a 0%, #2d2d2d 100%); /* 👈 Más contraste */
   color: #eee;
   padding: 15px;
   font-size: 0.9rem;
@@ -141,22 +148,14 @@ footer {
   display: inline-block;
   font-weight: 600;
   font-size: .95rem;
-  color: #222;
+  color: #222f; 
+  background: #e3350d; 
   cursor: url('https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png'), pointer;
-  padding: 6px 10px;
+  padding: 8px 16px; 
   margin: 0 6px;
-  border-radius: 50%;
-  transition: color .2s ease, transform .1s ease;
-}
-.tag::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  background: #e3350d;
-  transform: scale(0);
-  transition: transform .25s ease;
-  z-index: -1;
+  border-radius: 20px; 
+  transition: all .2s ease; 
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2); 
 }
 
 .tag:hover::before { 
@@ -164,12 +163,15 @@ footer {
 }
 
 .tag:hover {
-  color: #fff;
-  text-shadow: 1px 1px 2px #000;
+  background: #e3350d; 
+  transform: translateY(-2px) scale(1.05); 
+  box-shadow: 0 4px 8px rgba(227,53,13,0.4); 
+  color: #fff; 
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3); 
 }
 
 .tag:active { 
-  transform: scale(0.9); 
+  transform: translateY(0) scale(0.98); 
 }
 
 #sugerencias {
@@ -224,4 +226,19 @@ footer {
   button { font-size: 14px; }
   .imagen img { width: 200px; }
   .nombre { font-size: 1.1rem; }
+}
+
+.imagen {
+  animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

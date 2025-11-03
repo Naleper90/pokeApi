@@ -1,25 +1,3 @@
-// Colores por tipo de Pokémon
-const TYPE_COLORS = {
-  normal: "#A8A77A",
-  fire: "#EE8130",
-  water: "#6390F0",
-  electric: "#F7D02C",
-  grass: "#7AC74C",
-  ice: "#96D9D6",
-  fighting: "#C22E28",
-  poison: "#A33EA1",
-  ground: "#E2BF65",
-  flying: "#A98FF3",
-  psychic: "#F95587",
-  bug: "#A6B91A",
-  rock: "#B6A136",
-  ghost: "#735797",
-  dragon: "#6F35FC",
-  dark: "#705746",
-  steel: "#B7B7CE",
-  fairy: "#D685AD"
-};
-
 // Recuperar los datos del Pokémon almacenado
 const data = JSON.parse(localStorage.getItem("pokemonSeleccionado"));
 
@@ -45,7 +23,7 @@ if (data) {
     data?.sprites?.front_default || "";
   if (imgUrl) imagen.src = imgUrl;
 
-  idEl.textContent = "ID: " + data.id;
+  idEl.textContent = "Nº " + String(data.id).padStart(3, '0');
 
   const tipos = Array.isArray(data.types) ? data.types : [];
   const tipoPrincipal = tipos[0]?.type?.name || "normal";
@@ -61,9 +39,12 @@ if (data) {
   peso.textContent = "Peso: " + (data.weight / 10).toFixed(1) + " kg";
 
   // HABILIDADES 
-  habilidades.innerHTML = (data.abilities || [])
-    .map(a => `<li>${a.ability.name}</li>`)
-    .join("");
+habilidades.innerHTML = (data.abilities || [])
+  .map(a => {
+    const nombre = a.ability.name.replace(/-/g, ' ');
+    return `<li style="text-transform: capitalize;">${nombre}</li>`;
+  })
+  .join("");
 
   // ESTADÍSTICAS 
   const statNames = {
