@@ -46,26 +46,29 @@ async function buscarPokemon() {
 
 // Obtener datos desde la API
 async function obtenerPokemon(identificador) {
+  mostrarMensaje("🔍 Buscando...", "loading");
+  
   try {
+    console.log("1. Iniciando fetch..."); 
     const res = await fetch(API + identificador);
+    console.log("2. Respuesta recibida:", res.ok); 
     if (!res.ok) throw new Error("Pokémon no encontrado");
+    
     const data = await res.json();
+    console.log("3. Pokémon encontrado:", data.name);
     ultimoPokemon = data;
+    mostrarMensaje("");
     mostrarPokemon(data);
-
-    mostrarMensaje("")
   } catch (e) {
-    // Corregir o mirar porque limpia el campo entero
-    limpiar();
-    mostrarMensaje("Pokémon no encontrado. Intenta con otro nombre o ID.");
+    console.log("4. ERROR CAPTURADO:", e.message); 
+    mostrarMensaje("❌ Pokémon no encontrado. Intenta con otro nombre o ID.", "error");
   }
 }
 
 // Mostrar mensaje dentro del buscador
-function mostrarMensaje(texto) {
+function mostrarMensaje(texto, tipo = "error") {
   let mensaje = document.getElementById("mensaje");
 
-  // Si no existe, lo creamos dentro del buscador
   if (!mensaje) {
     const buscador = document.querySelector(".buscador");
     mensaje = document.createElement("p");
@@ -79,6 +82,13 @@ function mostrarMensaje(texto) {
   }
 
   mensaje.textContent = texto;
+  mensaje.style.display = texto ? "block" : "none";
+
+  if (tipo === "loading") {
+    mensaje.style.color = "#2a75bb";
+  } else {
+    mensaje.style.color = "#e3350d"; 
+  }
 }
 
 
