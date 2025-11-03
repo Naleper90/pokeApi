@@ -1,0 +1,227 @@
+html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+main { 
+  flex: 1; 
+}
+
+body {
+  font-family: 'Russo One', Arial, sans-serif;
+  background-color: #f5f5f5;
+  color: #222;
+  text-align: center;
+}
+
+
+header {
+  background-color: #e3350d;
+  color: #fff;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,.3);
+}
+header h1 {
+  margin: 0;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 1.5rem;
+}
+.subtitulo { 
+  font-family: 'Russo One', Arial, sans-serif;
+  font-size: .9rem; 
+  opacity: .9; 
+  margin-top: 5px; 
+}
+
+.buscador { 
+  margin: 30px 0; 
+  position: relative; 
+  display: inline-block;
+}
+
+input {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 2px solid #ff0505;
+  width: 230px;
+}
+input:focus {
+  outline: none;
+  border-color: #ff0505;
+  box-shadow: 0 0 6px #ff0505;
+}
+
+button {
+  padding: 10px 14px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  margin-left: 5px;
+  cursor: url('https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png'), pointer;
+  color: #fff;
+  transition: 0.2s;
+}
+#buscar { 
+  background-color: #e3350d; 
+}
+#buscar:hover { 
+  background-color: #c62f0c; 
+}
+#limpiar { 
+  background-color: #555;
+ }
+#limpiar:hover { 
+  background-color: #333;
+ }
+
+.resultado {
+  display: flex;
+  justify-content: center;
+  margin: 20px auto 40px;
+  padding: 0 12px;
+}
+
+.imagen {
+  --tipo-color: #ff0505;                   
+  background: #fff;
+  padding: 16px 16px 10px;
+  border-radius: 12px;
+  border-top: 6px solid var(--tipo-color); 
+  box-shadow: 0 4px 12px rgba(0,0,0,.12);
+  cursor: url('https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png'), pointer;
+  transition: transform .2s, box-shadow .2s, border-color .3s ease;
+  text-align: center;
+}
+
+.imagen:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 20px var(--tipo-color);
+}
+
+.imagen img {
+  width: 260px;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto 8px;
+}
+.nombre {
+  margin: 6px 0 0;
+  font-size: 1.25rem;
+  font-family: 'Press Start 2P', monospace;
+  color: #ffcb05;   
+  text-transform: capitalize;
+}
+
+footer {
+  background-color: #222;
+  color: #eee;
+  padding: 15px;
+  font-size: 0.9rem;
+  border-top: 4px solid #e3350d;
+  box-shadow: 0 -3px 6px rgba(0,0,0,.2);
+  text-align: center;
+}
+
+.mensaje-inicial {
+  font-size: 1rem;
+  color: #333;
+  opacity: .7;
+  margin-bottom: 10px;
+}
+.ejemplos {
+  color: #444;
+  font-size: .9rem;
+  margin-top: 8px;
+}
+
+.tag {
+  position: relative;
+  display: inline-block;
+  font-weight: 600;
+  font-size: .95rem;
+  color: #222;
+  cursor: url('https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png'), pointer;
+  padding: 6px 10px;
+  margin: 0 6px;
+  border-radius: 50%;
+  transition: color .2s ease, transform .1s ease;
+}
+.tag::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: #e3350d;
+  transform: scale(0);
+  transition: transform .25s ease;
+  z-index: -1;
+}
+
+.tag:hover::before { 
+  transform: scale(1); 
+}
+
+.tag:hover {
+  color: #fff;
+  text-shadow: 1px 1px 2px #000;
+}
+
+.tag:active { 
+  transform: scale(0.9); 
+}
+
+#sugerencias {
+  position: absolute;
+  top: 100%;                  
+  left: 0;
+  right: 0;
+  list-style: none;
+  padding: 6px 0;
+  margin: 4px 0 0;
+  background: #fffef5;
+  border: 2px solid #ffcb05;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.12);
+  text-align: left;
+  overflow: hidden;
+  z-index: 20;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+#sugerencias .sug-item {
+  padding: 8px 12px;
+  border-bottom: 1px solid #ffe780;
+  cursor: pointer;
+  transition: background .15s ease, color .15s ease;
+}
+
+#sugerencias .sug-item:last-child {
+  border-bottom: none;
+}
+
+#sugerencias .sug-item:hover,
+#sugerencias .sug-item.sug-active {
+  background: #ffcb05;
+  color: #222;
+}
+
+#sugerencias .sug-item strong {
+  font-weight: 700;
+}
+
+#sugerencias:empty {
+  display: none !important;
+}
+
+
+/* Responsive */
+@media (max-width: 780px) {
+  header h1 { font-size: 1.3rem; }
+  .buscador input { width: 180px; }
+  button { font-size: 14px; }
+  .imagen img { width: 200px; }
+  .nombre { font-size: 1.1rem; }
+}

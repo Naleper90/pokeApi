@@ -1,0 +1,87 @@
+/* =========================
+   Estilos comunes Pokédex
+   ========================= */
+
+/* Base + layout para footer abajo */
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; display: flex; flex-direction: column; }
+main { flex: 1; }
+
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  background-color: #f5f5f5;
+  color: #222;
+  text-align: center;
+}
+
+/* Header */
+header {
+  background-color: #e3350d;
+  color: #fff;
+  padding: 18px 20px;
+  box-shadow: 0 3px 8px rgba(0,0,0,.28);
+}
+header h1 {
+  margin: 0;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 1.45rem;
+}
+
+/* Footer */
+footer {
+  background: #222;
+  color: #eee;
+  padding: 14px;
+  font-size: .95rem;
+  border-top: 4px solid #2a75bb;
+  text-align: center;
+}
+
+/* Botones (básico y consistente) */
+button {
+  padding: 10px 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  color: #fff;
+  transition: background .2s, transform .1s;
+}
+button:active { transform: translateY(1px) scale(.99); }
+
+/* Rojos (buscar / volver) y gris (limpiar) */
+#buscar, #volver { background-color: #e3350d; }
+#buscar:hover, #volver:hover { background-color: #c62f0c; }
+#limpiar { background-color: #575757; }
+#limpiar:hover { background-color: #3f3f3f; }
+
+/* “Pantalla” oscura tipo Pokédex (como tu .info del index) */
+.screen {
+  background: #0b1324;
+  color: #e6edf6;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,.2);
+  text-align: left;
+  padding: 20px;
+}
+.screen h2 { color: #ffcb05; text-transform: capitalize; margin: 0 0 6px; }
+
+/* Chips de tipo (por si los usas en ambos) */
+.chip {
+  display:inline-block; padding:4px 8px; border-radius:999px;
+  font-size:12px; color:#fff; margin-right:6px; text-transform:capitalize;
+}
+.chip.fire{background:#f08030;} .chip.water{background:#6890f0;}
+.chip.grass{background:#78c850;} .chip.electric{background:#f8d030;}
+.chip.ice{background:#98d8d8;color:#222;} .chip.fighting{background:#c03028;}
+.chip.poison{background:#a040a0;} .chip.ground{background:#e0c068;color:#222;}
+.chip.flying{background:#a890f0;} .chip.psychic{background:#f85888;}
+.chip.bug{background:#a8b820;color:#222;} .chip.rock{background:#b8a038;color:#222;}
+.chip.ghost{background:#705898;} .chip.dark{background:#705848;}
+.chip.steel{background:#b8b8d0;color:#222;} .chip.dragon{background:#7038f8;}
+.chip.fairy{background:#ee99ac;color:#222;} .chip.normal{background:#a8a878;color:#222;}
+
+/* Responsive leve compartido */
+@media (max-width: 780px) {
+  header h1 { font-size: 1.28rem; }
+}

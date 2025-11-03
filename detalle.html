@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Detalle del Pokémon</title>
+  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="dstyles.css" />
+</head>
+
+<body>
+
+  <header>
+    <h1>Detalle del Pokémon</h1>
+  </header>
+
+  <main>
+    <section class="detalle">
+      <!-- Imagen principal -->
+      <img id="imagen" alt="Imagen del Pokémon" />
+
+      <!-- Información del Pokémon -->
+      <article>
+        <h2 id="nombre">—</h2>
+        <p id="id">ID: —</p>
+        <p id="tipo">Tipo: —</p>
+        <p id="altura">Altura: —</p>
+        <p id="peso">Peso: —</p>
+
+        <h3>Descripción</h3>
+        <p id="descripcion">—</p>
+
+        <h3>Generación</h3>
+        <p id="generacion">—</p>
+
+        <h3>Habilidades</h3>
+        <ul id="habilidades"></ul>
+
+        <h3>Estadísticas base</h3>
+        <ul id="stats"></ul>
+
+        <button id="volver">⬅ Volver al buscador</button>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>Proyecto Pokédex · Hecho por Natalia</p>
+  </footer>
+
+  <script src="detalle.js"></script>
+  
+</body>
+</html>

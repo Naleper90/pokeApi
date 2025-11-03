@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pokédex</title>
+  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <header>
+    <h1>Pokédex</h1>
+    <p class="subtitulo">Buscador de Pokémon</p>
+  </header>
+
+  <main>
+    <section class="buscador">
+      <input type="text" id="entrada" placeholder="Nombre o ID del Pokémon" />
+      <button id="buscar">Buscar</button>
+      <button id="limpiar">Limpiar</button>
+    </section>
+    <p class="mensaje-inicial">Escribe un nombre o ID y pulsa “Buscar”.</p>
+
+    <!-- Ejemplos clicables -->
+    <p class="ejemplos">
+      Ejemplos:
+      <span class="tag">Bulbasaur</span> ·
+      <span class="tag">Charmander</span> ·
+      <span class="tag">Pikachu</span>
+    </p>
+
+    <!-- Resultado -->
+    <section class="resultado" id="resultado">
+      <article class="imagen" id="contenedorImagen" hidden>
+        <img id="imagen" alt="Imagen del Pokémon" />
+        <h2 id="nombre" class="nombre">—</h2>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>Proyecto de Cliente · PokéAPI · Hecho por Natalia</p>
+  </footer>
+
+  <script src="script.js"></script>
+  
+</body>
+</html>

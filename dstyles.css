@@ -1,0 +1,206 @@
+* { 
+  box-sizing: border-box; 
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;               
+  flex-direction: column;
+  text-align: center;
+}
+
+main { 
+  flex: 1; 
+}
+
+body {
+  font-family: 'Russo One', Arial, sans-serif;
+  background-color: #f5f5f5;
+  color: #222;
+}
+
+header {
+  background-color: #e3350d;
+  color: #fff;
+  padding: 18px 20px;
+  box-shadow: 0 3px 8px rgba(0,0,0,.28);
+}
+header h1 {
+  margin: 0;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 1.45rem;
+}
+
+.detalle {
+  background: #fff;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+  text-align: left;
+  overflow: auto;             
+}
+
+.detalle article {
+  overflow: hidden;            
+  min-width: 280px;
+}
+
+.detalle img {
+  float: left;                 
+  width: 230px;
+  max-width: 100%;
+  margin: 0 24px 12px 0;       
+  filter: drop-shadow(0 8px 14px rgba(0,0,0,.2));
+  transition: transform .18s ease;
+  cursor: pointer;
+}
+.detalle img:hover {
+  transform: scale(1.04);
+  box-shadow: 0 0 18px rgba(227,53,13,.58);
+}
+
+.detalle h2 {
+  font-family: 'Press Start 2P', monospace;
+  color: #ffcb05;
+  text-transform: capitalize;
+  font-size: 1.55rem;
+  margin: 0 0 8px;
+  letter-spacing: .2px;
+}
+.detalle p {
+  margin: 6px 0;
+  font-size: 1rem;
+  color: #222;
+}
+
+.detalle h3 {
+  font-family: "Russo One", Arial, sans-serif;
+  position: relative;
+  display: inline-block;
+  color: #2a75bb;              
+  font-size: 1.05rem;
+  margin: 18px 0 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding-bottom: 4px;
+}
+.detalle h3::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 100%; height: 2px;
+  background: #2a75bb;
+  border-radius: 2px;
+}
+
+.detalle ul {
+  list-style: none;
+  padding: 0;
+  margin: 6px 0 12px;
+}
+.detalle li { margin: 6px 0; }
+
+.stat-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.stat-name {
+  width: 70px;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+.stat-val {
+  width: 36px;
+  text-align: right;
+  font-size: 0.9rem;
+}
+
+progress {
+  flex: 1;
+  height: 10px;
+  appearance: none;
+}
+
+progress::-webkit-progress-bar {
+  background: #eee;
+  border-radius: 6px;
+}
+
+progress::-webkit-progress-value {
+  background: #2a75bb;        
+  border-radius: 6px;
+}
+
+progress::-moz-progress-bar {
+  background: #2a75bb;
+  border-radius: 6px;
+}
+
+
+#descripcion, #generacion {
+  background: #f6f6f6;
+  border-left: 4px solid #ffcb05;    
+  border-radius: 6px;
+  padding: 10px 14px;
+  margin: 8px 0 14px;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: #333;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+#volver {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 10px 14px;
+  background-color: #e3350d;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: url('https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png'), pointer;
+  font-size: 15px;
+  transition: background .2s, transform .1s;
+}
+#volver:hover {
+  background-color: #c62f0c;
+  transform: scale(1.03);
+}
+
+
+footer {
+  background-color: #222;
+  color: #eee;
+  padding: 15px;
+  font-size: 0.9rem;
+  border-top: 4px solid #e3350d;     
+  box-shadow: 0 -3px 6px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 780px) {
+  header h1 { font-size: 1.28rem; }
+
+  .detalle {
+    text-align: center;
+    padding: 22px 18px;
+  }
+
+  .detalle img {
+    float: none;
+    display: block;
+    margin: 0 auto 12px;
+    width: 180px;
+  }
+
+  .stat-name { width: 64px; }
+  .stat-val  { width: 34px; }
+
+  .detalle h2 { font-size: 1.38rem; }
+  .detalle p  { font-size: .92rem; }
+  #volver     { font-size: 14px; }
+}
